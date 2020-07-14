@@ -26,7 +26,7 @@ def generate_launch_description():
         node_name='rviz2',
         output = 'screen',
         arguments=['-d', rviz_config_dir],
-        parameters=[{'use_sim_time': 'false'}]
+        parameters=[{'use_sim_time': False }]
         )
     rgbd_node = Node(
         package='realsense_node',

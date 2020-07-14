@@ -58,8 +58,8 @@ RealSenseD435::RealSenseD435(rs2::context ctx, rs2::device dev, rclcpp::Node & n
     }
   }
   pointcloud_pub_ = node_.create_publisher<sensor_msgs::msg::PointCloud2>(
-    POINTCLOUD_TOPIC, rclcpp::QoS(
-      1));
+    POINTCLOUD_TOPIC, rclcpp::QoS(rclcpp::KeepLast(1)).reliable().transient_local());
+
   if (node_.has_parameter("dense_pointcloud")) {
     node_.get_parameter("dense_pointcloud", dense_pc_);
   } else {

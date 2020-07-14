@@ -1,11 +1,11 @@
 /d435i:
   camera:
     ros__parameters:
-      serial_no: 843112073259 # d435i
+      serial_no: 948122071728 # d435i
       align_depth: false
       enable_pointcloud: true
       dense_pointcloud: true
-      #base_frame_id:
+      base_frame_id: "camera_link"
       color0:
         enabled: true
         resolution: [640,480]
