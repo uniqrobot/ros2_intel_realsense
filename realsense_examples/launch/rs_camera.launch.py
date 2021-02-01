@@ -23,8 +23,8 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     rgbd_node = Node(
         package='realsense_node',
-        node_executable='realsense_node',
-        node_namespace='',
+        executable='realsense_node',
+        namespace='',
         output='screen',
         )
     return launch.LaunchDescription([rgbd_node])

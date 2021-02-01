@@ -39,7 +39,7 @@ RealSenseBase::RealSenseBase(rs2::context ctx, rs2::device dev, rclcpp::Node & n
   cfg_.enable_device(sn);
   pipeline_ = rs2::pipeline(ctx_);
   static_tf_broadcaster_ = std::make_shared<tf2_ros::StaticTransformBroadcaster>(node_);
-  node_.set_on_parameters_set_callback(
+  node_.add_on_set_parameters_callback(
     std::bind(
       &RealSenseBase::paramChangeCallback, this,
       std::placeholders::_1));
