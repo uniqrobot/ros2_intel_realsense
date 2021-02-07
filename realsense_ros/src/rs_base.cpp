@@ -97,19 +97,19 @@ void RealSenseBase::startPipeline()
   auto prof = pipeline_.start(cfg_, frame_data);
 
   //https://github.com/IntelRealSense/librealsense/issues/3277
-  std::string json_file_name = "/home/kk/uniq_data/configuration/LowResHighAccuracyPreset.json";
-  rs2::device dev = prof.get_device();
-  auto advanced_mode_dev = dev.as<rs400::advanced_mode>();
-  // Check if advanced-mode is enabled to pass the custom config
-  if (!advanced_mode_dev.is_enabled())
-  {
-    // If not, enable advanced-mode
-    advanced_mode_dev.toggle_advanced_mode(true);
-    std::cout << "Advanced mode enabled. " << std::endl;
-  }
-  std::ifstream t(json_file_name);
-  std::string preset_json((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
-  advanced_mode_dev.load_json(preset_json);
+  // std::string json_file_name = "/home/kk/uniq_data/configuration/LowResHighAccuracyPreset.json";
+  // rs2::device dev = prof.get_device();
+  // auto advanced_mode_dev = dev.as<rs400::advanced_mode>();
+  // // Check if advanced-mode is enabled to pass the custom config
+  // if (!advanced_mode_dev.is_enabled())
+  // {
+  //   // If not, enable advanced-mode
+  //   advanced_mode_dev.toggle_advanced_mode(true);
+  //   std::cout << "Advanced mode enabled. " << std::endl;
+  // }
+  // std::ifstream t(json_file_name);
+  // std::string preset_json((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
+  // advanced_mode_dev.load_json(preset_json);
   
   // auto sensor = prof.get_device();
   // sensor.set_option(rs2_option::RS2_OPTION_VISUAL_PRESET, rs2_rs400_visual_preset::RS2_RS400_VISUAL_PRESET_HIGH_ACCURACY);
